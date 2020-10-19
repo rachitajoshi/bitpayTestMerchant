@@ -22,8 +22,7 @@ async function generateInvoice(event) {
     };
     try {
         const { data } = await axios.post('https://testinvoice.b-pay.net/invoice', invoice, authHeaders);
-        const { id } = data.data;
-        // Modal
+        const id = data["id"];
         showInvoice(id);
     } catch (err) {
         console.log(err);
