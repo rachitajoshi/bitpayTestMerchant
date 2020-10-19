@@ -21,7 +21,7 @@ async function generateInvoice(event) {
         }
     };
     try {
-        const { data } = await axios.post('https://staging.bitpay.com/invoices', invoice, authHeaders);
+        const { data } = await axios.post('https://testinvoice.b-pay.net/invoice', invoice, authHeaders);
         const { id } = data.data;
         // Modal
         showInvoice(id);
